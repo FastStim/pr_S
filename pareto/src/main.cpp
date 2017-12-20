@@ -1,5 +1,40 @@
 #include "main.h"
 
+int compare(float* left, float* right, int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (left[i] >= right[i])
+			count++;
+	}
+
+	// Если количество 0 то сразу игнорим такую строку (передаем 1)
+	// Иначе если число равно 0 то отрезаем ту строку с которой сравнивали
+	// Если любое другое число то просто записываем в вектор Парето
+	if (count == 0) 
+		return 1;
+	else
+		return count - size;
+}
+
+vector<float*> logic(float** mat, int size, int nSize)
+{
+	vector<float*> result;
+	for (int i = 0; i < size; ++i)
+	{
+		if (result.size() < 1)
+		{
+			result.push_back(mat[i]);
+			continue; 
+		}
+
+		int cur = compare(mat[i], result[i], nSize);
+	}
+
+	return result;
+}
+
 int main()
 {
 	int size = 9;
@@ -80,6 +115,12 @@ int main()
 	// name[4] = "Спаниель";
 
 	// solution
+
+	vector<float*> result = logic(mat, size, nSize);
+
+	for (int i = 0; i < result.size(); i++)
+		for (int j = 0; j < nSize; j++)
+			cout << result[i][j] << endl;
 
 	return 0;
 }
