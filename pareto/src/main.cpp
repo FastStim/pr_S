@@ -86,11 +86,7 @@ void print (vector<string> name, vector<vector<float>> result)
 
 int main()
 {
-	int size = 9;
-	int nSize = 6;
-
 	vector<vector<float>> mat;
-	vector<float> krit;
 	vector<string> name;
 	
 	//Default task
