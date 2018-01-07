@@ -39,43 +39,43 @@ int main()
 
 	// Egor task
 
-	// mat[0] = new float[size] {3.1, 128, 200, 150, -4690};
-	// mat[1] = new float[size] {2.0, 32,  15,  5,   -750 };
-	// mat[2] = new float[size] {3.0, 32,  90,  20,  -1070};
-	// mat[3] = new float[size] {2.0, 8,   27,  12,  -570 };
-	// mat[4] = new float[size] {3.0, 128, 150, 150, -3220};
+	mat[0] = new float[size] {3.1, 128, 200, 150, -4690};
+	mat[1] = new float[size] {2.0, 32,  15,  5,   -750 };
+	mat[2] = new float[size] {3.0, 32,  90,  20,  -1070};
+	mat[3] = new float[size] {2.0, 8,   27,  12,  -570 };
+	mat[4] = new float[size] {3.0, 128, 150, 150, -3220};
 
-	// krit[0] = 3.0;
-	// krit[1] = 32;
-	// krit[2] = 90;
-	// krit[3] = 20;
-	// krit[4] = -4690;
+	krit[0] = 3.0;
+	krit[1] = 32;
+	krit[2] = 90;
+	krit[3] = 20;
+	krit[4] = -4690;
 
-	// name[0] = "SanDisk Extreme Go";
-	// name[1] = "Smart Buy Glossy";
-	// name[2] = "Qumo Speedster";
-	// name[3] = "Qumo Tropic Green";
-	// name[4] = "SanDisk Cruzer Ultra Fit";
+	name[0] = "SanDisk Extreme Go";
+	name[1] = "Smart Buy Glossy";
+	name[2] = "Qumo Speedster";
+	name[3] = "Qumo Tropic Green";
+	name[4] = "SanDisk Cruzer Ultra Fit";
 
 	// Julia task
 
-	mat[0] = new float[size] {234, 59, 144,   1,   9}; 
-	mat[1] = new float[size] {340, 88, 208, 4.5,  10}; 
-	mat[2] = new float[size] {300, 43, 160,   3, 8.5}; 
-	mat[3] = new float[size] {210, 55, 108, 2.9,   3}; 
-	mat[4] = new float[size] {301, 70, 150, 3.3,  11}; 
+	// mat[0] = new float[size] {234, 59, 144,   1,   9}; 
+	// mat[1] = new float[size] {340, 88, 208, 4.5,  10}; 
+	// mat[2] = new float[size] {300, 43, 160,   3, 8.5}; 
+	// mat[3] = new float[size] {210, 55, 108, 2.9,   3}; 
+	// mat[4] = new float[size] {301, 70, 150, 3.3,  11}; 
 
-	krit[0] = 200; 
-	krit[1] = 50; 
-	krit[2] =150; 
-	krit[3] = 3; 
-	krit[4] = 5;
+	// krit[0] = 200; 
+	// krit[1] = 50; 
+	// krit[2] =150; 
+	// krit[3] = 3; 
+	// krit[4] = 5;
 
-	name[0] = "Далматин"; 
-	name[1] = "Ретривер"; 
-	name[2] = "Доберман"; 
-	name[3] = "Корги"; 
-	name[4] = "Спаниель";
+	// name[0] = "Далматин"; 
+	// name[1] = "Ретривер"; 
+	// name[2] = "Доберман"; 
+	// name[3] = "Корги"; 
+	// name[4] = "Спаниель";
 
 	int j = 0;
 	for (int i = 0; i < size; i++)
