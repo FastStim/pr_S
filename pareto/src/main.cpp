@@ -90,25 +90,25 @@ int main()
 	vector<string> name;
 	
 	//Default task
-	// mat.push_back({10, 2,   3, 2, 2, 4});
-	// mat.push_back({ 4, 7,   3, 4, 3, 1});
-	// mat.push_back({ 6, 8,   3, 5, 4, 2});
-	// mat.push_back({ 9, 2,   3, 2, 1, 3});
-	// mat.push_back({ 5, 1, 0.1, 5, 2, 2});
-	// mat.push_back({ 3, 8, 0.1, 2, 4, 1});
-	// mat.push_back({ 3, 5,   4, 2, 7, 7});
-	// mat.push_back({ 3, 6,   3, 4, 4, 1});
-	// mat.push_back({ 2, 5,   3, 1, 5, 7});
+	mat.push_back({10, 2,   3, 2, 2, 4});
+	mat.push_back({ 4, 7,   3, 4, 3, 1});
+	mat.push_back({ 6, 8,   3, 5, 4, 2});
+	mat.push_back({ 9, 2,   3, 2, 1, 3});
+	mat.push_back({ 5, 1, 0.1, 5, 2, 2});
+	mat.push_back({ 3, 8, 0.1, 2, 4, 1});
+	mat.push_back({ 3, 5,   4, 2, 7, 7});
+	mat.push_back({ 3, 6,   3, 4, 4, 1});
+	mat.push_back({ 2, 5,   3, 1, 5, 7});
 
-	// name.push_back("U1");
-	// name.push_back("U2");
-	// name.push_back("U3");
-	// name.push_back("U4");
-	// name.push_back("U5");
-	// name.push_back("U6");
-	// name.push_back("U7");
-	// name.push_back("U8");
-	// name.push_back("U9");
+	name.push_back("U1");
+	name.push_back("U2");
+	name.push_back("U3");
+	name.push_back("U4");
+	name.push_back("U5");
+	name.push_back("U6");
+	name.push_back("U7");
+	name.push_back("U8");
+	name.push_back("U9");
 
 	// Egor task
 
@@ -126,17 +126,17 @@ int main()
 
 	// Julia task
 
-	mat.push_back({234, 59, 144,   1,   9});
-	mat.push_back({340, 88, 208, 4.5,  10});
-	mat.push_back({300, 43, 160,   3, 8.5});
-	mat.push_back({210, 55, 108, 2.9,   3});
-	mat.push_back({301, 70, 150, 3.3,  11});
+	// mat.push_back({234, 59, 144,   1,   9});
+	// mat.push_back({340, 88, 208, 4.5,  10});
+	// mat.push_back({300, 43, 160,   3, 8.5});
+	// mat.push_back({210, 55, 108, 2.9,   3});
+	// mat.push_back({301, 70, 150, 3.3,  11});
 
-	name.push_back("Далматин"); 
-	name.push_back("Ретривер"); 
-	name.push_back("Доберман"); 
-	name.push_back("Корги"); 
-	name.push_back("Спаниель");
+	// name.push_back("Далматин"); 
+	// name.push_back("Ретривер"); 
+	// name.push_back("Доберман"); 
+	// name.push_back("Корги"); 
+	// name.push_back("Спаниель");
 
 	// solution
 

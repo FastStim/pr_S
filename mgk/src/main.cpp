@@ -30,8 +30,8 @@ int main()
 	// krit[7] = 10;
 
 	// name[0] = "Смена";
-	// name[1] = "Час Пик";
-	// name[2] = "Невское время";
+	// name[2] = "Час Пик";
+	// name[1] = "Невское время";
 	// name[3] = "Вечерний ПБ";
 	// name[4] = "СПБ ведомости";
 	// name[5] = "Деловой ПБ";
@@ -39,23 +39,23 @@ int main()
 
 	// Egor task
 
-	mat[0] = new float[size] {3.1, 128, 200, 150, -4690};
-	mat[1] = new float[size] {2.0, 32,  15,  5,   -750 };
-	mat[2] = new float[size] {3.0, 32,  90,  20,  -1070};
-	mat[3] = new float[size] {2.0, 8,   27,  12,  -570 };
-	mat[4] = new float[size] {3.0, 128, 150, 150, -3220};
+	// mat[0] = new float[size] {3.1, 128, 200, 150, -4690};
+	// mat[1] = new float[size] {2.0, 32,  15,  5,   -750 };
+	// mat[2] = new float[size] {3.0, 32,  90,  20,  -1070};
+	// mat[3] = new float[size] {2.0, 8,   27,  12,  -570 };
+	// mat[4] = new float[size] {3.0, 128, 150, 150, -3220};
 
-	krit[0] = 3.0;
-	krit[1] = 32;
-	krit[2] = 90;
-	krit[3] = 20;
-	krit[4] = -4690;
+	// krit[0] = 3.0;
+	// krit[1] = 32;
+	// krit[2] = 90;
+	// krit[3] = 20;
+	// krit[4] = -4690;
 
-	name[0] = "SanDisk Extreme Go";
-	name[1] = "Smart Buy Glossy";
-	name[2] = "Qumo Speedster";
-	name[3] = "Qumo Tropic Green";
-	name[4] = "SanDisk Cruzer Ultra Fit";
+	// name[0] = "SanDisk Extreme Go";
+	// name[1] = "Smart Buy Glossy";
+	// name[2] = "Qumo Speedster";
+	// name[3] = "Qumo Tropic Green";
+	// name[4] = "SanDisk Cruzer Ultra Fit";
 
 	// Julia task
 

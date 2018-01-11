@@ -87,11 +87,6 @@ vector<vector<double>> descent(values* val, bool changeStep, bool* stop, double 
 			xL[i] = val->x[i] + val->h[i];
 			double rightF = func(xL);
 
-			// if (counts > 150000000 && counts % 1000000 == 0)
-			// {
-			// 	cout << counts/1000000 << ": " << curF << "|" << leftF << "|" << rightF << endl;
-			// }
-
 			if (curF <= leftF && curF <= rightF)
 			{
 				if (val->h[i] > eps && changeStep)
@@ -99,12 +94,12 @@ vector<vector<double>> descent(values* val, bool changeStep, bool* stop, double 
 				else
 					break;
 			}
-			else if (curF > leftF)
+			else if (curF >= leftF)
 			{
 				val->x[i] = val->x[i] - val->h[i];
 				break;
 			}
-			else if (curF > rightF)
+			else if (curF >= rightF)
 			{
 				val->x[i] = val->x[i] + val->h[i];
 				break;
@@ -161,7 +156,7 @@ int main()
 	//Остановка
 	bool stop;
 	//Точность вычислений
-	double eps = 0.000000000000001;
+	double eps = 0.0000001;
 	//Коэффициент шага
 	double alpha = 2;
 
@@ -176,17 +171,17 @@ int main()
 
 	//Функция росзенброка
 	values rosenF;
-	rosenF.x.push_back(-1.2);
-	rosenF.x.push_back(1);
+	rosenF.x.push_back(1.0101675);
+	rosenF.x.push_back(0.990221);
 
-	rosenF.h.push_back(0.1);
-	rosenF.h.push_back(0.1);
+	rosenF.h.push_back(0.001);
+	rosenF.h.push_back(0.001);
 	rosenF.type = 2;
 
 	// Ассиметричная долина
 	values assF;
-	assF.x.push_back(0);
-	assF.x.push_back(-1);
+	assF.x.push_back(3);
+	assF.x.push_back(2.820214);
 
 	assF.h.push_back(0.1);
 	assF.h.push_back(0.1);
@@ -194,28 +189,29 @@ int main()
 
 	// Функция пауэлла
 	values paulF;
-	paulF.x.push_back(3);
-	paulF.x.push_back(-1);
-	paulF.x.push_back(0);
-	paulF.x.push_back(1);
+	paulF.x.push_back(0.0112);
+	paulF.x.push_back(-0.21);
+	paulF.x.push_back(0.000003);
+	paulF.x.push_back(0.1239);
 
-	paulF.h.push_back(100);
-	paulF.h.push_back(100);
-	paulF.h.push_back(100);
-	paulF.h.push_back(100);
+	paulF.h.push_back(0.001);
+	paulF.h.push_back(0.001);
+	paulF.h.push_back(0.001);
+	paulF.h.push_back(0.001);
 	paulF.type = 4;
 
 	// Минимальных квадратов
 	values mquadF;
+	// 2.714; 140.4; 1707; 31.51
 	mquadF.x.push_back(2.7);
-	mquadF.x.push_back(90);
-	mquadF.x.push_back(1500);
-	mquadF.x.push_back(10);
+	mquadF.x.push_back(140);
+	mquadF.x.push_back(1705);
+	mquadF.x.push_back(31);
 
-	mquadF.h.push_back(10);
-	mquadF.h.push_back(10);
-	mquadF.h.push_back(10);
-	mquadF.h.push_back(10);
+	mquadF.h.push_back(0.001);
+	mquadF.h.push_back(0.001);
+	mquadF.h.push_back(0.001);
+	mquadF.h.push_back(0.001);
 	mquadF.type = 5;
 
 	// solution
@@ -234,7 +230,6 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << quadF.x[0] << endl;
 	cout << quadF.x[1] << endl;
-	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
@@ -251,7 +246,6 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << rosenF.x[0] << endl;
 	cout << rosenF.x[1] << endl;
-	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
@@ -268,14 +262,12 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << assF.x[0] << endl;
 	cout << assF.x[1] << endl;
-	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
 		vector<vector<double>> x = descent(&paulF, true, &stop, eps);
-		break;
 		if (stop)
 			break;
 		paulF.x = hookT(x, alpha, paulF, eps);
@@ -288,14 +280,12 @@ int main()
 	cout << paulF.x[1] << endl;
 	cout << paulF.x[2] << endl;
 	cout << paulF.x[3] << endl;
-	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 	
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
 		vector<vector<double>> x = descent(&mquadF, true, &stop, eps);
-		break;
 		if (stop)
 			break;
 		mquadF.x = hookT(x, alpha, mquadF, eps);
@@ -308,7 +298,6 @@ int main()
 	cout << mquadF.x[1] << endl;
 	cout << mquadF.x[2] << endl;
 	cout << mquadF.x[3] << endl;
-	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	return 0;
 }
