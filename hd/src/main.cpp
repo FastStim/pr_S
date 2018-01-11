@@ -1,6 +1,7 @@
 #include "main.h"
 
 int counts = 0;
+int tests = 0;
 
 struct values
 {
@@ -73,16 +74,25 @@ vector<vector<double>> descent(values* val, bool changeStep, bool* stop, double 
 	vector<double> xL = val->x;
 
 	result.push_back(val->x);
+	
 	for (int i = 0; i < val->x.size(); i++)
 	{
 		double curF = func(val->x);
 		while (true)
 		{			
+			counts++;
+
 			xL[i] = val->x[i] - val->h[i];
 			double leftF = func(xL);
 			xL[i] = val->x[i] + val->h[i];
 			double rightF = func(xL);
-			if (curF < leftF && curF < rightF)
+
+			// if (counts > 150000000 && counts % 1000000 == 0)
+			// {
+			// 	cout << counts/1000000 << ": " << curF << "|" << leftF << "|" << rightF << endl;
+			// }
+
+			if (curF <= leftF && curF <= rightF)
 			{
 				if (val->h[i] > eps && changeStep)
 					val->h[i] /= 2;
@@ -91,7 +101,6 @@ vector<vector<double>> descent(values* val, bool changeStep, bool* stop, double 
 			}
 			else if (curF > leftF)
 			{
-
 				val->x[i] = val->x[i] - val->h[i];
 				break;
 			}
@@ -121,6 +130,7 @@ vector<double> hookT(vector<vector<double>> x, double alpha, values val, double 
 {
 	vector<double> result;
 	int c = 0;
+	
 	while (true)
 	{
 		for (int i = 0; i < x[0].size(); i++)
@@ -151,7 +161,7 @@ int main()
 	//Остановка
 	bool stop;
 	//Точность вычислений
-	double eps = 0.0000001;
+	double eps = 0.000000000000001;
 	//Коэффициент шага
 	double alpha = 2;
 
@@ -209,14 +219,13 @@ int main()
 	mquadF.type = 5;
 
 	// solution
-	cout << endl;
 	counts = 0;
+	cout << endl;
 	stop  = false;
 	while (true)
 	{
-		counts++;
 		vector<vector<double>> x = descent(&quadF, true, &stop, eps);
-		if (stop || counts > 3000000)
+		if (stop)
 			break;
 		quadF.x = hookT(x, alpha, quadF, eps);
 	}
@@ -225,14 +234,14 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << quadF.x[0] << endl;
 	cout << quadF.x[1] << endl;
+	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
-		counts++;
 		vector<vector<double>> x = descent(&rosenF, true, &stop, eps);
-		if (stop || counts > 3000000)
+		if (stop)
 			break;
 		rosenF.x = hookT(x, alpha, rosenF, eps);
 	}
@@ -242,14 +251,14 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << rosenF.x[0] << endl;
 	cout << rosenF.x[1] << endl;
+	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
-		counts++;
 		vector<vector<double>> x = descent(&assF, true, &stop, eps);
-		if (stop || counts > 3000000)
+		if (stop)
 			break;
 		assF.x = hookT(x, alpha, assF, eps);
 	}
@@ -259,15 +268,15 @@ int main()
 	cout << "\033[35m" << "При х:" << "\033[0m" << endl;
 	cout << assF.x[0] << endl;
 	cout << assF.x[1] << endl;
+	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
-		counts++;
 		vector<vector<double>> x = descent(&paulF, true, &stop, eps);
 		break;
-		if (stop || counts > 3000000)
+		if (stop)
 			break;
 		paulF.x = hookT(x, alpha, paulF, eps);
 	}
@@ -279,15 +288,15 @@ int main()
 	cout << paulF.x[1] << endl;
 	cout << paulF.x[2] << endl;
 	cout << paulF.x[3] << endl;
+	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 	
 	counts = 0;
 	stop  = false;
 	while (true)
 	{
-		counts++;
 		vector<vector<double>> x = descent(&mquadF, true, &stop, eps);
 		break;
-		if (stop || counts > 3000000)
+		if (stop)
 			break;
 		mquadF.x = hookT(x, alpha, mquadF, eps);
 	}
@@ -299,6 +308,7 @@ int main()
 	cout << mquadF.x[1] << endl;
 	cout << mquadF.x[2] << endl;
 	cout << mquadF.x[3] << endl;
+	cout << "\033[31m" << "Количество итераций: " << "\033[0m" << counts << endl;
 
 	return 0;
 }

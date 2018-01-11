@@ -198,23 +198,23 @@ int main()
 	
 	//Default task
 
-	mat.push_back({ 5.0, 1.0,  50.0});
-	mat.push_back({10.0, 1.5,  40.0});
-	mat.push_back({ 2.0, 1.5,  90.0});
-	mat.push_back({ 1.0, 1.0, 100.0});
-	mat.push_back({ 6.0, 3.0, 100.0});
-	mat.push_back({16.0, 3.5,  50.0});
+	// mat.push_back({ 5.0, 1.0,  50.0});
+	// mat.push_back({10.0, 1.5,  40.0});
+	// mat.push_back({ 2.0, 1.5,  90.0});
+	// mat.push_back({ 1.0, 1.0, 100.0});
+	// mat.push_back({ 6.0, 3.0, 100.0});
+	// mat.push_back({16.0, 3.5,  50.0});
 
-	name.push_back("МКО1");
-	name.push_back("МКО2");
-	name.push_back("МКО3");
-	name.push_back("МКО4");
-	name.push_back("МКО5");
-	name.push_back("МКО6");
+	// name.push_back("МКО1");
+	// name.push_back("МКО2");
+	// name.push_back("МКО3");
+	// name.push_back("МКО4");
+	// name.push_back("МКО5");
+	// name.push_back("МКО6");
 
-	krit.push_back(6);
-	krit.push_back(6);
-	krit.push_back(2);
+	// krit.push_back(6);
+	// krit.push_back(6);
+	// krit.push_back(2);
 
 	// Egor task
 
@@ -238,23 +238,23 @@ int main()
 
 	// Julia task
 
-	// mat.push_back({234, 59, 144,   1,   9});
-	// mat.push_back({340, 88, 208, 4.5,  10});
-	// mat.push_back({300, 43, 160,   3, 8.5});
-	// mat.push_back({210, 55, 108, 2.9,   3});
-	// mat.push_back({301, 70, 150, 3.3,  11});
+	mat.push_back({234, 59, 144,   1,   9});
+	mat.push_back({340, 88, 208, 4.5,  10});
+	mat.push_back({300, 43, 160,   3, 8.5});
+	mat.push_back({210, 55, 108, 2.9,   3});
+	mat.push_back({301, 70, 150, 3.3,  11});
 
-	// name.push_back("Далматин"); 
-	// name.push_back("Ретривер"); 
-	// name.push_back("Доберман"); 
-	// name.push_back("Корги"); 
-	// name.push_back("Спаниель");
+	name.push_back("Далматин"); 
+	name.push_back("Ретривер"); 
+	name.push_back("Доберман"); 
+	name.push_back("Корги"); 
+	name.push_back("Спаниель");
 
-	// krit.push_back(7);
-	// krit.push_back(9);
-	// krit.push_back(1);
-	// krit.push_back(9);
-	// krit.push_back(4);
+	krit.push_back(7);
+	krit.push_back(9);
+	krit.push_back(1);
+	krit.push_back(9);
+	krit.push_back(4);
 
 	// solution
 	cout << endl;
